@@ -1,0 +1,92 @@
+/* تنسيق عام */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff6347;
+}
+
+/* حاوية الأنمي */
+.anime-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.anime-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.anime-card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+/* تنسيق الصور والفيديو */
+.anime-image,
+.anime-video {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.anime-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none; /* إخفاء الفيديو في الوضع العادي */
+  z-index: 1;
+}
+
+/* تأثير الظهور عند التمرير */
+.anime-card:hover .anime-image {
+  opacity: 0; /* إخفاء الصورة */
+}
+
+.anime-card:hover .anime-video {
+  display: block; /* إظهار الفيديو */
+}
+
+/* تذييل الصفحة */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}

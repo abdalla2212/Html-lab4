@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Show Website</title>
+    <link rel="stylesheet" href="stylee.css"> <!-- ربط ملف CSS -->
+</head>
+<body>
+
+    <header>
+        <h1>List of Featured Anime 📺</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">New Anime</a></li>
+                <li><a href="#">Most Viewed</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ======= Filters ======= -->
+    <div class="filters">
+        <input type="radio" name="genre" id="all" checked>
+        <label for="all">All</label>
+
+        <input type="radio" name="genre" id="action">
+        <label for="action">Action</label>
+
+        <input type="radio" name="genre" id="drama">
+        <label for="drama">Drama</label>
+
+        <input type="radio" name="genre" id="adventure">
+        <label for="adventure">Adventure</label>
+    </div>
+
+    <main class="anime-container">
+        <!-- ======= Anime Card 1 ======= -->
+        <div class="anime-card action">
+            <img src="img_an/download (1).jpg" alt="Anime 1 Image">
+            <h3>Anime 1 (Action)</h3>
+            <p>Exciting action-packed adventures!</p>
+
+            <!-- Video Trailer -->
+            <details>
+                <summary>Watch Trailer 🎥</summary>
+                <video controls>
+                    <source src="img_an/WhatsApp Video 2025-02-09 at 00.39.13_1f93d8f8.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </details>
+
+            <!-- Star Rating -->
+            <div class="rating">
+                <input type="radio" id="star5-1" name="rating1" value="5">
+                <label for="star5-1" class="star">&#9733;</label>
+
+                <input type="radio" id="star4-1" name="rating1" value="4">
+                <label for="star4-1" class="star">&#9733;</label>
+
+                <input type="radio" id="star3-1" name="rating1" value="3">
+                <label for="star3-1" class="star">&#9733;</label>
+
+                <input type="radio" id="star2-1" name="rating1" value="2">
+                <label for="star2-1" class="star">&#9733;</label>
+
+                <input type="radio" id="star1-1" name="rating1" value="1">
+                <label for="star1-1" class="star">&#9733;</label>
+            </div>
+        </div>
+
+        <!-- ======= Anime Card 2 ======= -->
+        <div class="anime-card drama">
+            <img src="img_an/images (1).jpg" alt="Anime 2 Image">
+            <h3>Anime 2 (Drama)</h3>
+            <p>A dramatic story full of suspense!</p>
+
+            <details>
+                <summary>Watch Trailer 🎥</summary>
+                <video controls>
+                    <source src="trailers/anime2-trailer.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </details>
+
+            <div class="rating">
+                <input type="radio" id="star5-2" name="rating2" value="5">
+                <label for="star5-2" class="star">&#9733;</label>
+
+                <input type="radio" id="star4-2" name="rating2" value="4">
+                <label for="star4-2" class="star">&#9733;</label>
+
+                <input type="radio" id="star3-2" name="rating2" value="3">
+                <label for="star3-2" class="star">&#9733;</label>
+
+                <input type="radio" id="star2-2" name="rating2" value="2">
+                <label for="star2-2" class="star">&#9733;</label>
+
+                <input type="radio" id="star1-2" name="rating2" value="1">
+                <label for="star1-2" class="star">&#9733;</label>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

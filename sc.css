@@ -1,0 +1,186 @@
+/* تنسيق أساسي وتطبيق الخلفية */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+  background-image: url("imag/unnamed.png"); /* استبدل الرابط بصورة الخلفية */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* طبقة شفافة فوق الخلفية */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* تنسيق الهيدر */
+header {
+  background-color: rgba(34, 34, 34, 0.9);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 15px;
+  background-color: rgba(68, 68, 68, 0.8);
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer; /* تغيير شكل الماوس عند المرور */
+}
+
+/* تأثير عند تمرير الماوس على الروابط */
+nav a:hover {
+  background-color: #c52c2cc9;
+  transform: scale(1.1);
+}
+
+/* تنسيق بطاقات الأنمي */
+.anime-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* ضبط حجم البطاقات ليكون موحدًا */
+.anime-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: 220px;
+  height: 380px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  cursor: pointer; /* تغيير شكل الماوس عند المرور */
+}
+
+/* ضبط حجم الصور بشكل مثالي */
+.anime-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+/* تنسيق النصوص داخل البطاقة */
+.anime-card h3 {
+  margin: 10px 0 5px;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.anime-card p {
+  color: #666;
+  font-size: 0.9em;
+  flex-grow: 1;
+  padding: 0 5px;
+}
+
+/* ✨ تأثير عند تمرير الماوس على البطاقات */
+/* .anime-card:hover {
+  transform: translateY(-10px); 
+  background-color: #ffefd538;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); 
+} */
+
+.anime-card:hover,
+nav a:hover {
+  cursor: pointer;
+  background-color: #ffefd538;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+  transition: background-color 0.3s ease;
+  position: relative; /* لتسهيل تحديد موضع الفيديو */
+}
+.anime-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.anime-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; /* إخفاء الفيديو افتراضيًا */
+}
+
+.anime-card:hover .anime-image {
+  display: none; /* إخفاء الصورة عند التحويم */
+}
+
+.anime-card:hover .anime-video {
+  display: block; /* إظهار الفيديو عند التحويم */
+}
+
+/* تأثير الصوت */
+.anime-card:hover::before,
+nav a:hover::before {
+  content: "";
+  position: absolute;
+  pointer-events: none; /* لتجنب أي تأثير على تفاعل المستخدم */
+  animation: play-sound 0.01s; /* تشغيل الصوت فورياً */
+}
+
+@keyframes play-sound {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#hover-video {
+  width: 250px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+}
+
+/* تنسيق الفوتر */
+footer {
+  background-color: rgba(34, 34, 34, 0.9);
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
